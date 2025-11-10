@@ -16,7 +16,8 @@ export class Wire {
     const roomId = window.location.pathname.split("/").pop();
 
     // WebSocket server URL, including the room ID
-    this.url = `ws://localhost:3000/ws?room=${roomId}`;
+    this.url = `wss://collaborative-canvas-server-eivx.onrender.com/ws?room=${roomId}`;
+
 
     // Establish the WebSocket connection
     this.connect();
