@@ -3,8 +3,13 @@
 A real-time collaborative whiteboard application where multiple users can draw on the same canvas simultaneously. The application synchronizes strokes, cursor positions, and undo/redo operations across all connected users using WebSockets.
 
 ---
-### 📄 Problem Statement  
-**→** [View Problem Statement](./PROBLEM_STATEMENT.md)
+### 📄 Documentation
+
+| Document | Link |
+|---------|------|
+| Problem Statement | [View Problem Statement](./PROBLEMSTATEMENT.md) |
+| System Architecture | [View Architecture](./ARCHITECTURE.md) |
+
 
 
 ---
