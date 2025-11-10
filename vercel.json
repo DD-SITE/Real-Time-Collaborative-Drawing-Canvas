@@ -1,16 +1,6 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "index.html", "use": "@vercel/static" },
-    { "src": "client/**/*", "use": "@vercel/static" },
-    { "src": "public/**/*", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "handle": "filesystem" },
-    {
-      "src": "/board/(.*)",
-      "dest": "/client/board.html"
-    }
+  "rewrites": [
+    { "source": "/board/:room", "destination": "/board.html" }
   ]
 }
 
