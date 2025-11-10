@@ -1,7 +1,6 @@
 import http from "http";
 import { WebSocketServer, WebSocket } from "ws";
 
-const PORT = 3000;
 
 /*
   A Stroke represents one continuous drawing stroke on the canvas.
@@ -84,10 +83,14 @@ const server = http.createServer((req, res) => {
 ------------------------------------------------------------------- */
 const wss = new WebSocketServer({ server, path: "/ws" });
 
-// Start server
-server.listen(PORT, () => {
-  console.log(`[WS] running at ws://localhost:${PORT}/ws`);
+// Use Render's assigned PORT (important for deployment)
+const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
+
+// Bind to 0.0.0.0 so external clients can connect
+server.listen(PORT, "0.0.0.0", () => {
+  console.log(`[WS] running on port ${PORT}`);
 });
+
 
 wss.on("connection", (ws: WebSocket, req) => {
 
