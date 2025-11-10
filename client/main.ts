@@ -2,6 +2,8 @@ import { nanoid } from "nanoid";
 import type { Point, Stroke } from "./canvas";
 import { CanvasBoard } from "./canvas";
 import { Wire } from "./wire";
+import "./style.css";
+
 
 // ---- ROOM FROM URL ----
 // The URL looks like:  /board/ABC123
