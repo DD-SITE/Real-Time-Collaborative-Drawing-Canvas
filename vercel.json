@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/board/:room", "destination": "/board.html" }
+    { "source": "/board/:id", "destination": "/" }
   ]
 }
 

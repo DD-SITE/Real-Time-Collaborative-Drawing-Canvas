@@ -1,15 +1,10 @@
 import { defineConfig } from "vite";
 
-export default defineConfig({
-  root: ".",                 // Project root (where index.html lives)
-  publicDir: "public",       // Static files
+export default {
+  root: "client",
   build: {
-    outDir: "dist",          // Final output folder
+    outDir: "../dist",
     emptyOutDir: true
-  },
-  resolve: {
-    alias: {
-      "/client": "/client"
-    }
   }
-});
+};
+
