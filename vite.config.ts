@@ -1,10 +1,9 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  root: ".", // project root
-  resolve: {
-    alias: {
-      "@": "/client"
-    }
+  root: "./client",
+  build: {
+    outDir: "../dist",
+    emptyOutDir: true,
   }
 });
