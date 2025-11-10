@@ -4,7 +4,9 @@ A real-time collaborative whiteboard application where multiple users can draw o
 
 ---
 ### 📄 Problem Statement  
-**→** [View Problem Statement](./PROBLEMSTATEMENT.md)
+**→** [View Problem Statement](./PROBLEM_STATEMENT.md)
+
+
 ---
 
 ## Features
@@ -42,15 +44,16 @@ Open a drawing board by navigating to a unique board URL, for example:
 http://localhost:5173/board/ABC123
 ```
 ### 2. Share the Link
--Copy the link and open it:
--In another browser, OR
--In private/incognito mode, OR
--On your phone (connected to the same Wi-Fi network)
+- Copy the link and open it:
+- In another browser, OR
+- In private/incognito mode, OR
+- On your phone (connected to the same Wi-Fi network)
 
 ### 3. Start Drawing
 Draw on both screens — your strokes should sync in real time across all connected clients.
 
 ## Folder Structure
+```
 collaborative-canvas/
 ├── client/                               # Frontend (Vanilla JS/TS + Canvas)
 │   ├── canvas.ts                         # Canvas rendering + stroke smoothing + redraw logic
@@ -60,36 +63,34 @@ collaborative-canvas/
 │   ├── websocket.ts                      # (Old typed WS wrapper - optional-unused)
 │   ├── wire.ts                           # WebSocket wrapper (reconnect + event dispatch system)
 │   ├── style.css                         # UI styling for toolbar, board layout, avatars, cursors
-│   └── typescript.svg                    # Asset (unused)
-│
-├── public/
 │   ├── index.html                        # Home page UI for selecting/creating boards
 │   └── board.html                        # Collaborative drawing canvas UI
 │
 ├── server/
 │   ├── server.ts                         # WebSocket server: rooms, stroke state, user presence
-│   └── drawing-state.ts                  # Central stroke state placeholder (not always required)
-│
-├── node_modules/
+│   └── drawing-state.ts                  # Central stroke state placeholder (may be unused)
 │
 ├── .gitignore
 ├── package.json
 ├── package-lock.json
 ├── tsconfig.json
 ├── vite.config.ts
-├── README.md                             # Setup instructions, testing, limitations
-└── ARCHITECTURE.md                       # Data flow diagram, protocol design, undo/redo strategy
+├── README.md                             # Main documentation
+└── ARCHITECTURE.md                       # Protocol design & undo/redo flow
+```
+
 
 
 
 ## Known Limitations / Future Improvements
 
--Strokes are stored in memory (not persistent after server restart).
--No authentication — usernames are local to the browser.
--Performance may degrade with extremely large stroke history.
--Undo/Redo is global per board (not per-user stack).
-
-## ⏱️ Time Spent
+- Strokes are stored in memory (not persistent after server restart).
+- No authentication — usernames are local to the browser.
+- Performance may degrade with extremely large stroke history.
+- Undo/Redo is global per board (not per-user stack).
+  
+---
+##  Time Spent
 
 | Task                                      | Time       |
 |-------------------------------------------|------------|
@@ -98,15 +99,16 @@ collaborative-canvas/
 | Undo/Redo Global State Handling           | ~2 hours   |
 | Room Management + Sharable Links          | ~2 hours |
 | UI Styling + Testing Multiple Users       | ~2 hours   |
-| Documentation & Cleanup                   | ~1 hour    |
+| Documentation & Deployment                | ~4 hour    |
 
-**Total:** ~14 hours
+**Total:** ~17 hours
+---
 
-##Project Goal
+## Project Goal
 
 This project was built to demonstrate:
--Efficient canvas drawing & incremental rendering
--Real-time event streaming over WebSockets
--Shared global state synchronization (undo/redo)
--Room-based collaboration architecture
--Clean, maintainable TypeScript without frameworks
+- Efficient canvas drawing & incremental rendering
+- Real-time event streaming over WebSockets
+- Shared global state synchronization (undo/redo)
+- Room-based collaboration architecture
+- Clean, maintainable TypeScript without frameworks
