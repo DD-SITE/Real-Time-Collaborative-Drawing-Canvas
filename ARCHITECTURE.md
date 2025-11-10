@@ -22,7 +22,7 @@ The goal is to maintain a **consistent shared canvas** across all active users w
 | App Logic         | `client/main.ts`            | User input, event sending, undo/redo, cursor presence, avatars     |
 
 ## Data Flow Diagram
-
+```
       User Input (mouse/touch)
                 │
                 ▼
@@ -41,7 +41,7 @@ The goal is to maintain a **consistent shared canvas** across all active users w
                 │
                 ▼
         Canvas Rendering (canvas.ts)
-
+```
 ## WebSocket Protocol
 
 ### Messages Sent From Client → Server
