@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Boards</title>
+  <link rel="stylesheet" href="/client/style.css" />
+
+
+  <script>
+    const path = window.location.pathname;
+    if (path.startsWith("/board/")) {
+      fetch("/board.html")
+        .then(r => r.text())
+        .then(html => {
+          document.open();
+          document.write(html);
+          document.close();
+        });
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Available Boards</h1>
+
+  <div id="board-list" class="board-list"></div>
+
+  <button id="create-btn" class="create-btn">Create New Board</button>
+
+  <script type="module" src="/client/home.ts"></script>
+</body>
+</html>

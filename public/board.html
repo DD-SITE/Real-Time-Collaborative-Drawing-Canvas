@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Board</title>
+
+  
+  <link rel="stylesheet" href="/client/style.css" />
+</head>
+
+<body>
+  <header class="toolbar">
+    <select id="tool">
+      <option value="brush">Brush</option>
+      <option value="eraser">Eraser</option>
+    </select>
+    <input id="color" type="color" value="#2b6cff">
+    <input id="size" type="range" min="1" max="40" value="6">
+    <button id="undo">Undo</button>
+    <button id="redo">Redo</button>
+    <button id="share">Share</button>
+    <div id="avatars"></div>
+    <span style="margin-left:auto" id="presence">online: 1</span>
+  </header>
+
+  <div id="board-stage">
+    <canvas id="board" width="1200" height="700"></canvas>
+    <div id="cursor-layer"></div>
+  </div>
+
+  <script type="module" src="/client/main.ts"></script>
+</body>
+</html>
