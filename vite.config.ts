@@ -5,8 +5,14 @@ export default defineConfig({
   root: "client",
   publicDir: "public",        // <-- correct because public is now inside client/
   build: {
-    outDir: "../dist",        // output goes to dist at project root
-    emptyOutDir: true
-  }
+    outDir: "../dist",
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: "client/index.html",
+        board: "client/board.html"
+      }
+    }
+  }  
 });
 
